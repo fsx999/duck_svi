@@ -13,7 +13,7 @@ class WishSvi(models.Model):
     gestionaire_bourse = models.CharField(db_column='GestBourse', null=False, max_length=6)
 
     class Meta:
-        db_name = "ied_etudiant"
+        db_table = "ied_etudiant"
 
 
 class GestToEtape(models.Model):
