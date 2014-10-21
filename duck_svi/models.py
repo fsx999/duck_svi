@@ -12,6 +12,9 @@ class WishSvi(models.Model):
     gestionaire_equiv = models.CharField(db_column='GestEquiv', null=True, max_length=6)
     gestionaire_bourse = models.CharField(db_column='GestBourse', null=False, max_length=6)
 
+    class Meta:
+        db_name = "ied_etudiant"
+
 
 class GestToEtape(models.Model):
     code_gestionaire = models.CharField(primary_key=True, max_length=6)
