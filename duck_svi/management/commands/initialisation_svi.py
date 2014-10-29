@@ -13,7 +13,25 @@ alphabet = list(string.ascii_lowercase)
 dict_gest={
     "L1NPSY": {'gest': ['GEST01', 'GEST02'], "psycho": True, 'bourse': "GEST22"},
     "L1NDRO": {'gest': ['GEST05'], "psycho": False, 'bourse': "GEST22"},
-    "L1NINF": {'gest': ['GEST08'], "psycho": False, 'bourse': "GEST22"}
+    "L1NINF": {'gest': ['GEST08'], "psycho": False, 'bourse': "GEST22"},
+    "L2NPSY": {'gest': ['GEST03'], "psycho": False, 'bourse': "GEST22"},
+    "L3NPSY": {'gest': ['GEST04'], "psycho": False, 'bourse': "GEST22"},
+    "L2NDRO": {'gest': ['GEST06'], "psycho": False, 'bourse': "GEST22"},
+    "L3NDRO": {'gest': ['GEST07'], "psycho": False, 'bourse': "GEST22"},
+    "L2NINF": {'gest': ['GEST09'], "psycho": False, 'bourse': "GEST22"},
+    "L3NINF": {'gest': ['GEST10'], "psycho": False, 'bourse': "GEST22"},
+    "L3NEDU": {'gest': ['GEST11'], "psycho": False, 'bourse': "GEST22"},
+    "M1NEFI": {'gest': ['GEST12'], "psycho": False, 'bourse': "GEST22"},
+    "M2NEFI": {'gest': ['GEST13'], "psycho": False, 'bourse': "GEST22"},
+    "M1NPEA": {'gest': ['GEST14'], "psycho": False, 'bourse': "GEST22"},
+    "M2NPEA": {'gest': ['GEST15'], "psycho": False, 'bourse': "GEST22"},
+    "M1NPST": {'gest': ['GEST16'], "psycho": False, 'bourse': "GEST22"},
+    "M2NPST": {'gest': ['GEST17'], "psycho": False, 'bourse': "GEST22"},
+    "DSNATA": {'gest': ['GEST18'], "psycho": False, 'bourse': "GEST22"},
+    "M1NPCL": {'gest': ['GEST19'], "psycho": False, 'bourse': "GEST22"},
+    "M2NPCL": {'gest': ['GEST20'], "psycho": False, 'bourse': "GEST22"}
+
+
 }
 
 def get_gestionaire(wish):
@@ -34,7 +52,7 @@ class Command(BaseCommand):
                 #update if passed
                 wish_svi.code_dossier = wish.code_dossier
                 wish_svi.password = "1234"
-                wish_svi.etat = SuiviDossierWorkflow.states[wish.suivi_dossier].title,
+                wish_svi.etat = SuiviDossierWorkflow.states[wish.suivi_dossier].title[0],
                 wish_svi.psycho = dict_gest[wish.etape.cod_etp]["psycho"]
                 wish_svi.gestionaire_bourse = dict_gest[wish.etape.cod_etp]["bourse"]
                 wish_svi.gestionaire_equiv = get_gestionaire(wish)
