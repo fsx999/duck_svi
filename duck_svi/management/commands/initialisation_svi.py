@@ -52,7 +52,7 @@ class Command(BaseCommand):
                 #update if passed
                 wish_svi.code_dossier = wish.code_dossier
                 wish_svi.password = "1234"
-                wish_svi.etat = SuiviDossierWorkflow.states[wish.suivi_dossier].title[0],
+                wish_svi.etat = SuiviDossierWorkflow.states[wish.suivi_dossier].title,
                 wish_svi.psycho = dict_gest[wish.etape.cod_etp]["psycho"]
                 wish_svi.gestionaire_bourse = dict_gest[wish.etape.cod_etp]["bourse"]
                 wish_svi.gestionaire_equiv = get_gestionaire(wish)
