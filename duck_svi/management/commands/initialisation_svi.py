@@ -10,6 +10,7 @@ from django.core.management.base import BaseCommand
 APOGEE_CONNECTION = getattr(settings, 'APOGEE_CONNECTION', 'oracle')
 import string
 alphabet = list(string.ascii_lowercase)
+
 dict_gest={
     "L1NPSY": {'gest': ['GEST01', 'GEST02'], "psycho": True, 'bourse': "GEST22"},
     "L1NDRO": {'gest': ['GEST05'], "psycho": False, 'bourse': "GEST22"},
@@ -30,8 +31,6 @@ dict_gest={
     "DSNATA": {'gest': ['GEST18'], "psycho": False, 'bourse': "GEST22"},
     "M1NPCL": {'gest': ['GEST19'], "psycho": False, 'bourse': "GEST22"},
     "M2NPCL": {'gest': ['GEST20'], "psycho": False, 'bourse': "GEST22"}
-
-
 }
 
 def get_gestionaire(wish):
