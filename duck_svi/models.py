@@ -16,7 +16,6 @@ class WishSvi(models.Model):
         db_table = "ied_etudiant"
 
 
-
 class GestToEtape(models.Model):
     code_gestionaire = models.CharField(primary_key=True, max_length=6)
     etape = models.ForeignKey(Etape, null=False)
